@@ -2,14 +2,24 @@
 ## Intoduction
 The Automatic Headlight Control System is a Verilog-based design that automates the vehicle's headlight functionality for enhanced safety and convenience. This system dynamically adjusts the vehicle's headlights based on external lighting conditions, weather, and vehicle speed. It ensures optimal headlight usage, reducing driver intervention and improving safety, especially in low-light or adverse weather conditions.
 
-Key features include:
+### Key features include:
 
-Automatic On/Off Control: The headlights turn on automatically when the surrounding environment is dark (nighttime) or during rainy conditions, and remain off during bright daylight and dry weather.
-Speed-Based Brightness Adjustment: The brightness of the headlights is adjusted depending on the vehicle's speed, ensuring full brightness at higher speeds and dimmed lights in rain or lower speeds.
-Weather and Ignition Sensor Integration: The system integrates a rain sensor and vehicle ignition status to provide intelligent control, ensuring headlights are only active when needed, and turn off when the vehicle is not running.
+#### Automatic On/Off Control:
+The headlights turn on automatically when the surrounding environment is dark (nighttime) or during rainy conditions, and remain off during bright daylight and dry weather.
+#### Speed-Based Brightness Adjustment: 
+The brightness of the headlights is adjusted depending on the vehicle's speed, ensuring full brightness at higher speeds and dimmed lights in rain or lower speeds.
+#### Weather and Ignition Sensor Integration:
+The system integrates a rain sensor and vehicle ignition status to provide intelligent control, ensuring headlights are only active when needed, and turn off when the vehicle is not running.
+
 The system helps improve driving safety by ensuring that headlights are always appropriately managed, regardless of environmental factors, thereby reducing the likelihood of accidents due to poor visibility. Designed for simplicity and efficiency, the project is implemented virtually using Verilog and can be easily simulated and tested within environments like Xilinx Vivado.
 
 ## Code
+
+    
+
+   
+
+
 `timescale 1ns / 1ps
 module automatic_headlight_control(
     input wire light_sensor,       // Input from the light sensor (0 = dark, 1 = bright)
@@ -19,7 +29,6 @@ module automatic_headlight_control(
     output reg headlights,         // Output to control the headlights (0 = off, 1 = on)
     output reg [7:0] dim_level     // Output for headlight brightness control (0 = off, 255 = full brightness)
 );
-
     // Parameters for speed thresholds
     parameter LOW_SPEED_THRESHOLD = 40;  // Speed below which headlights are mandatory in rain
     parameter HIGH_SPEED_THRESHOLD = 100; // Speed above which full brightness is required at night
