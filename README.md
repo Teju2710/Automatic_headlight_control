@@ -14,21 +14,16 @@ The system integrates a rain sensor and vehicle ignition status to provide intel
 The system helps improve driving safety by ensuring that headlights are always appropriately managed, regardless of environmental factors, thereby reducing the likelihood of accidents due to poor visibility. Designed for simplicity and efficiency, the project is implemented virtually using Verilog and can be easily simulated and tested within environments like Xilinx Vivado.
 
 ## Code
-
-    
-
-   
-
-
-`timescale 1ns / 1ps
-module automatic_headlight_control(
+     `timescale 1ns / 1ps
+     module automatic_headlight_control(
     input wire light_sensor,       // Input from the light sensor (0 = dark, 1 = bright)
     input wire rain_sensor,        // Input from the rain sensor (0 = no rain, 1 = rain)
     input wire [7:0] speed_sensor, // Input from the speed sensor (speed of the vehicle in km/h)
     input wire ignition,           // Input from the car's ignition (1 = car is on)
     output reg headlights,         // Output to control the headlights (0 = off, 1 = on)
     output reg [7:0] dim_level     // Output for headlight brightness control (0 = off, 255 = full brightness)
-);
+    );
+
     // Parameters for speed thresholds
     parameter LOW_SPEED_THRESHOLD = 40;  // Speed below which headlights are mandatory in rain
     parameter HIGH_SPEED_THRESHOLD = 100; // Speed above which full brightness is required at night
@@ -71,5 +66,5 @@ module automatic_headlight_control(
             dim_level = 0;          // No brightness if car is off
         end
     end
+    endmodule
 
-endmodule
