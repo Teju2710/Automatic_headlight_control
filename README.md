@@ -128,3 +128,6 @@ The system helps improve driving safety by ensuring that headlights are always a
         $finish;
     end
     endmodule
+
+## Result
+The Automatic Headlight Control System was successfully implemented and simulated using Verilog in a virtual environment. The system demonstrated efficient and accurate control of the vehicle's headlights based on external light conditions, rain detection, and vehicle speed. During simulation, the headlights automatically turned on when it was dark or rainy, and remained off during the day when no rain was detected, even at varying speeds. The system also adjusted the headlight brightness based on the speed of the vehicle, providing dimmed lights at lower speeds and full brightness at higher speeds, ensuring enhanced visibility in adverse conditions. The simulation confirmed that the system behaves as expected, providing a reliable solution for automatic headlight control that enhances driver safety and convenience.
